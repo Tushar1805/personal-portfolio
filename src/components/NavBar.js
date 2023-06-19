@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import { images } from '../constants';
 
 export const NavBar = () => {
-    const { activeLink, setActiveLink } = useState('home');
-    const { scrolled, setScrolled } = useState(false);
+    const [ activeLink, setActiveLink ] = useState('home');
+    const [ scrolled, setScrolled ] = useState(false);
 
     useEffect(() => {
         const onScroll = () => {
@@ -43,9 +43,9 @@ export const NavBar = () => {
                     </Nav>
                     <span className='navbar-text'>
                         <div className='social-icon'>
-                            <a href="#"><img src={images.navIcon1} alt=''></img></a>
-                            <a href='#'><img src={images.navIcon2} alt=''></img></a>
-                            <a href='#'><img src={images.navIcon3} alt=''></img></a>
+                            <a href="https://www.linkedin.com/in/kalbhande/"><img src={images.navIcon1} alt=''></img></a>
+                            <a href='https://github.com/Tushar1805'><img src={images.navIcon2} alt=''></img></a>
+                            <a href='https://www.instagram.com/tushar_kalbhande/'><img src={images.navIcon3} alt=''></img></a>
                         </div>
                         <button className='vvd' onClick={() => console.log("connect")}><span>Let's Connect</span></button>
                     </span>
