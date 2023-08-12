@@ -1,25 +1,26 @@
 import { useState, useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons";
+import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+import { ArrowRightCircle } from "react-bootstrap-icons";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["Flutter Developer", "Web Developer", "Student"];
+  const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const [text, setText] = useState("");
-  const period = 500;
+  const toRotate = ["Flutter Developer", "Firebase", "Student"];
+  const period = 2000;
 
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
     }, delta);
+
     return () => {
-      clearInterval(delta);
+      clearInterval(ticker);
     };
   }, [text]);
 
@@ -44,7 +45,7 @@ export const Banner = () => {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
-      setDelta(500);
+      setDelta(200);
     } else {
       setIndex((prevIndex) => prevIndex + 1);
     }
@@ -66,17 +67,17 @@ export const Banner = () => {
                     {`Hi! I'm Tushar |`}{" "}
                     <span
                       className="txt-rotate"
-                      dataPeriod="500"
+                      dataPeriod="1000"
                       data-rotate='[ "Flutter Developer", "Firebase", "Student" ]'>
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    An enthusiastic and results-driven software engineer
+                    specializing in Flutter development. With a solid foundation
+                    in Electronics and Telecommunication Engineering, I have
+                    cultivated a strong technical background and an unwavering
+                    passion for creating innovative software solutions.
                   </p>
                   <button onClick={() => console.log("connect")}>
                     Let’s Connect <ArrowRightCircle size={25} />
