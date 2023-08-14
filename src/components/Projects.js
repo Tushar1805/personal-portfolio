@@ -1,13 +1,34 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/smart.webp";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import robot from "../assets/img/robot.jpg";
+import prism from "../assets/img/prism.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export const Projects = () => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
   const projects = [
     {
       title: "S.M.A.R.T.",
@@ -16,29 +37,23 @@ export const Projects = () => {
       imgUrl: projImg1,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "Prism",
+      description:
+        "More often patients express their desire to stay in their own homes after being treated for an illness or physical condition. So, The app will monitor them to ensure their safety, well-being, and happiness",
+      imgUrl: prism,
     },
     {
       title: "Business Startup",
       description: "Design & Development",
-      imgUrl: projImg3,
+      imgUrl: robot,
     },
+  ];
+  const personalProjects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "Multifunctional Robot",
+      description:
+        "• The bot helps to reach the mining and fire safety sectors. It focuses on reaching the parts in mines where direct human involvement is life-threatening and needs a primitive lookout of the intended workspace before practical implementation.",
+      imgUrl: robot,
     },
   ];
 
@@ -73,11 +88,11 @@ export const Projects = () => {
                         </Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                        <Nav.Link eventKey="second">Personal Projects</Nav.Link>
                       </Nav.Item>
-                      <Nav.Item>
+                      {/* <Nav.Item>
                         <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                      </Nav.Item>
+                      </Nav.Item> */}
                     </Nav>
                     <Tab.Content
                       id="slideInUp"
@@ -85,29 +100,24 @@ export const Projects = () => {
                         isVisible ? "animate__animated animate__slideInUp" : ""
                       }>
                       <Tab.Pane eventKey="first">
-                        <Row>
+                        <Carousel
+                          responsive={responsive}
+                          infinite={true}
+                          className="owl-carousel owl-theme project-slider">
                           {projects.map((project, index) => {
                             return <ProjectCard key={index} {...project} />;
                           })}
-                        </Row>
+                        </Carousel>
                       </Tab.Pane>
-                      <Tab.Pane eventKey="section">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="third">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
+                      <Tab.Pane eventKey="second">
+                        <Carousel
+                          responsive={responsive}
+                          infinite={true}
+                          className="owl-carousel owl-theme project-slider">
+                          {personalProjects.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Carousel>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
@@ -117,7 +127,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" src={colorSharp2} alt=""></img>
     </section>
   );
 };
