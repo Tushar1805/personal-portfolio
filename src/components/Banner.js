@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
+// import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -73,13 +73,14 @@ export const Banner = () => {
                     </span>
                   </h1>
                   <p>
-                    An enthusiastic and results-driven software engineer
+                    I'm an enthusiastic and results-driven software engineer
                     specializing in Flutter development. With a solid foundation
                     in Electronics and Telecommunication Engineering, I have
                     cultivated a strong technical background and an unwavering
                     passion for creating innovative software solutions.
                   </p>
-                  <button onClick={() => console.log("connect")}>
+                  <button
+                    onClick={(event) => (window.location.href = "#connect")}>
                     Let’s Connect <ArrowRightCircle size={25} />
                   </button>
                 </div>

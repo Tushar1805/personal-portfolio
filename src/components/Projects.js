@@ -2,7 +2,9 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/smart.webp";
 import robot from "../assets/img/robot.jpg";
+import mahindracsc from "../assets/img/mahindracsc.png";
 import prism from "../assets/img/prism.png";
+import cremate from "../assets/img/cremate.jpeg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -35,26 +37,43 @@ export const Projects = () => {
       description:
         "A fully customisable Safety Management, Analysis, Reporting & Tracking (S.M.A.R.T.) mobile app specifically focused towards workplace health & safety in a manufacturing plant.",
       imgUrl: projImg1,
+      view: "https://www.ausaminnov.com/",
+      source:
+        "https://drive.google.com/file/d/1zoz99w3VE8f8YEEAICROvCsYK1g9IM-8/view?usp=sharing",
     },
     {
       title: "Prism",
       description:
         "More often patients express their desire to stay in their own homes after being treated for an illness or physical condition. So, The app will monitor them to ensure their safety, well-being, and happiness",
       imgUrl: prism,
+      view: "https://prismhealthservices.net/",
+      source:
+        "https://drive.google.com/file/d/1OojnvukOPe0UUDqw9kCkGEOum5GQLHrT/view?usp=sharing",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: robot,
-    },
-  ];
-  const personalProjects = [
-    {
-      title: "Multifunctional Robot",
+      title: "TMSW Portal",
       description:
-        "• The bot helps to reach the mining and fire safety sectors. It focuses on reaching the parts in mines where direct human involvement is life-threatening and needs a primitive lookout of the intended workspace before practical implementation.",
-      imgUrl: robot,
+        "This the admin portal built for The Mahindra Safety Way where they have admin features of Safety Management, Analysis, Reporting & Tracking ",
+      imgUrl: mahindracsc,
+      view: "https://www.miq.in/business-excellence-model/principle-of-mahindra/",
+      source: "https://mahindracsc-e5468.web.app/#/",
     },
+    {
+      title: "Crematorium Management System",
+      description:
+        "The app was built during the period of covid-19 where it is used to find the nearby available creamatoriums. User can also book the slots as well",
+      imgUrl: cremate,
+      view: "",
+      source: "",
+    },
+    // {
+    //   title: "Multifunctional Robot",
+    //   description:
+    //     "The bot helps to reach the mining and fire safety sectors. It focuses on reaching the parts in mines where direct human involvement is life-threatening and needs a primitive lookout of the intended workspace before practical implementation.",
+    //   imgUrl: robot,
+    //   view: "",
+    //   source: "",
+    // },
   ];
 
   return (
@@ -77,7 +96,7 @@ export const Projects = () => {
                     that showcase my abilities and reflect my dedication to
                     pushing the boundaries of what technology can achieve
                   </p>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                  {/* <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
                       variant="pills"
                       className="nav-pills mb-5 justify-content-center align-items-center"
@@ -90,19 +109,17 @@ export const Projects = () => {
                       <Nav.Item>
                         <Nav.Link eventKey="second">Personal Projects</Nav.Link>
                       </Nav.Item>
-                      {/* <Nav.Item>
-                        <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                      </Nav.Item> */}
-                    </Nav>
+                    </Nav> 
                     <Tab.Content
-                      id="slideInUp"
-                      className={
-                        isVisible ? "animate__animated animate__slideInUp" : ""
-                      }>
+                    id="slideInUp"
+                    className={
+                      isVisible ? "animate__animated animate__slideInUp" : ""
+                    }
+                    >
                       <Tab.Pane eventKey="first">
                         <Carousel
                           responsive={responsive}
-                          infinite={true}
+                          infinite={false}
                           className="owl-carousel owl-theme project-slider">
                           {projects.map((project, index) => {
                             return <ProjectCard key={index} {...project} />;
@@ -120,7 +137,15 @@ export const Projects = () => {
                         </Carousel>
                       </Tab.Pane>
                     </Tab.Content>
-                  </Tab.Container>
+                  </Tab.Container> */}
+                  <Carousel
+                    responsive={responsive}
+                    infinite={false}
+                    className="owl-carousel owl-theme project-slider">
+                    {projects.map((project, index) => {
+                      return <ProjectCard key={index} {...project} />;
+                    })}
+                  </Carousel>
                 </div>
               )}
             </TrackVisibility>

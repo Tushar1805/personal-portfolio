@@ -120,7 +120,8 @@ span.navbar-text {
   filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%)
     hue-rotate(346deg) brightness(95%) contrast(86%);
 }
-.navbar-text button {
+
+.navbar-text .button {
   font-weight: 700;
   color: #fff;
   border: 1px solid #fff;
@@ -131,10 +132,10 @@ span.navbar-text {
   background-color: transparent;
   transition: 0.3s ease-in-out;
 }
-.navbar-text button span {
+.navbar-text .button span {
   z-index: 1;
 }
-.navbar-text button::before {
+.navbar-text .button::before {
   content: "";
   width: 0%;
   height: 100%;
@@ -145,10 +146,10 @@ span.navbar-text {
   z-index: -1;
   transition: 0.3s ease-in-out;
 }
-.navbar-text button:hover {
+.navbar-text .button:hover {
   color: #121212;
 }
-.navbar-text button:hover::before {
+.navbar-text .button:hover::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -339,10 +340,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 1.5em;
   margin: 14px auto 30px auto;
   text-align: center;
-  width: 56%;
+  width: 80%;
 }
 .project .nav.nav-pills {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   border-radius: 50px;
   background-color: rgb(255 255 255 / 10%);
@@ -391,7 +392,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .nav-link#projects-tabs-tab-second {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0 55px 55px 0;
 }
 /* .nav-link#projects-tabs-tab-third {
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -471,10 +471,104 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin: 0 auto auto auto;
   object-fit: contain;
 } */
-.project-slider .item {
+/* .project-slider .item {
+  padding-left: 15px;
+  padding-right: 20px;
+} */
+
+.project-container {
+  width: 100%;
+  margin: auto;
+  justify-content: space-between;
+  padding-bottom: 5rem;
+  border-radius: 100px;
   padding-left: 15px;
   padding-right: 20px;
 }
+
+.project-card {
+  background-color: #1a1919;
+  padding: 1.5rem 1.5 rem;
+  margin: auto;
+}
+
+.project-card img {
+  width: 100%;
+}
+
+.pro-details p {
+  height: 200px;
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.project-card .project-title {
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 20px;
+  overflow: hidden;
+  height: 70px;
+}
+
+.project-container .project-card .pro-details .pro-btn {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  color: #000;
+}
+
+.project-container .project-card .pro-details .pro-btn .button {
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  margin: auto;
+  position: relative;
+  background-color: transparent;
+  transition: 0.4s ease-in-out;
+}
+.project-container .project-card .pro-details .pro-btn .button span {
+  z-index: 1;
+}
+.project-container .project-card .pro-details .pro-btn .button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+.project-container .project-card .pro-details .pro-btn .button:hover {
+  color: #121212;
+  background-color: #fff;
+}
+.project-container .project-card .pro-details .pro-btn .button:hover::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+@media screen and (max-width: 740px) {
+  .project-container {
+    max-width: 90%;
+    margin: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .pro-details p {
+    height: 250px;
+    padding-bottom: 1rem;
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+}
+
 /************ Contact Css ************/
 .contact {
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
@@ -621,7 +715,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .footer .logo {
-  width: 26%;
+  width: 40%;
   padding: 20px 0 0 0;
 }
 .footer img {
@@ -633,6 +727,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #b8b8b8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+.info {
+  font-weight: 500;
+  font-size: 16px;
+  color: #b8b8b8;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
 }
 
 .footer .social-icon {
