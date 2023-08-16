@@ -82,11 +82,11 @@ span.navbar-text {
   display: flex;
   align-items: center;
 }
-.social-icon {
-  display: inline-block;
+.navbar-text .social-icon {
+  display: flex;
   margin-left: 14px;
 }
-.social-icon a {
+.navbar-text .social-icon a {
   width: 45px;
   height: 45px;
   background: rgba(217, 217, 217, 0.1);
@@ -98,7 +98,7 @@ span.navbar-text {
   line-height: 1;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
-.social-icon a::before {
+.navbar-text .social-icon a::before {
   content: "";
   width: 42px;
   height: 42px;
@@ -108,15 +108,15 @@ span.navbar-text {
   transform: scale(0);
   transition: 0.3s ease-in-out;
 }
-.social-icon a:hover::before {
+.navbar-text .social-icon a:hover::before {
   transform: scale(1);
 }
-.social-icon a img {
+.navbar-text .social-icon a img {
   width: 40%;
   z-index: 1;
   transition: 0.3s ease-in-out;
 }
-.social-icon a:hover img {
+.navbar-text .social-icon a:hover img {
   filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%)
     hue-rotate(346deg) brightness(95%) contrast(86%);
 }
@@ -199,6 +199,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
+}
+
+@media screen and (max-width: 740px) {
+  nav.navbar.mobile {
+    padding: 18px 0;
+    background-color: #121212;
+  }
+  .social-icon {
+    display: flex;
+    margin-left: 14px;
+    justify-content: center;
+  }
 }
 
 /************ Banner Css ************/
@@ -511,14 +523,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   height: 70px;
 }
 
-.project-container .project-card .pro-details .pro-btn {
-  display: flex;
+.project-container .pro-btn {
   justify-content: space-between;
-  padding: 0.5rem 0;
-  color: #000;
+  display: flex;
+  padding: 0.5rem 0 0 0;
+  color: white;
 }
 
-.project-container .project-card .pro-details .pro-btn .button {
+/* .project-container .project-card .pro-details .pro-btn .button {
   font-weight: 700;
   color: #fff;
   border: 1px solid #fff;
@@ -552,17 +564,59 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 100%;
   height: 100%;
   position: absolute;
+} */
+
+.project-container .button {
+  font-weight: 700;
+  color: #000;
+  background-color: #fff;
+  padding: 10px;
+  /* padding: 14px 48px; */
+  font-size: 18px;
+  margin: auto;
+  border-radius: 0;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+.project-container .button span {
+  z-index: 1;
+  position: relative;
+}
+
+.project-container .button:hover {
+  color: #fff;
+}
+.project-container .button::before {
+  content: "";
+  background: #121212;
+  /* background: linear-gradient(
+    90.21deg,
+    rgba(170, 54, 124, 0.5) -5.91%,
+    rgba(74, 47, 189, 0.5) 111.58%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.5); */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+}
+.project-container .button:hover::before {
+  width: 100%;
 }
 
 @media screen and (max-width: 740px) {
   .project-container {
-    max-width: 90%;
+    max-width: 100%;
     margin: auto;
     grid-template-columns: 1fr;
   }
 
   .pro-details p {
-    height: 250px;
+    height: 300px;
     padding-bottom: 1rem;
     font-size: 1.1rem;
     text-align: justify;
@@ -738,5 +792,80 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .footer .social-icon {
+  display: inline-flex;
+  margin-left: 14px;
   padding: 20px 0 0 0;
+}
+.footer .social-icon a {
+  width: 45px;
+  height: 45px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.footer .social-icon a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+.footer .social-icon a:hover::before {
+  transform: scale(1);
+}
+.footer .social-icon a img {
+  width: 40%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.footer .social-icon a:hover img {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%)
+    hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+
+.footer .resume {
+  display: inline-flex;
+  margin-left: 14px;
+  padding: 20px 0 0 0;
+}
+
+.footer .resume .button {
+  font-weight: 700;
+  color: #000;
+  background-color: #fff;
+  padding: 14px 48px;
+  font-size: 18px;
+  margin-top: 25px;
+  border-radius: 0;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+.footer .resume .button span {
+  z-index: 1;
+  position: relative;
+}
+.footer .resume .button:hover {
+  color: #fff;
+}
+.footer .resume .button::before {
+  content: "";
+  background: #121212;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+}
+.footer .resume .button:hover::before {
+  width: 100%;
 }

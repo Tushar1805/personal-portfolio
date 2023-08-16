@@ -5,6 +5,10 @@ import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/gitNav.png";
 import navIcon3 from "../assets/img/nav-icon3.svg";
 import { FaHome, FaMailBulk, FaMailchimp, FaPhone } from "react-icons/fa";
+import { NavLink } from "react-bootstrap";
+
+const fileUrl =
+  "https://firebasestorage.googleapis.com/v0/b/tusharkalbhande-c84e5.appspot.com/o/Tushar_Kalbhande.pdf?alt=media&token=caf4e38c-d69f-44e6-a5fd-89babe374957";
 
 export const Footer = () => {
   return (
@@ -35,7 +39,7 @@ export const Footer = () => {
               tushkwork@gmail.com
             </div>
           </Col>
-          <Col size={12} sm={6} className="text-center text-sm-end">
+          <Col size={12} sm={6} className="text-center text-sm-end  ">
             <div className="social-icon">
               <a href="https://www.linkedin.com/in/kalbhande/">
                 <img src={navIcon1} alt="Icon" />
@@ -46,6 +50,11 @@ export const Footer = () => {
               <a href="https://www.instagram.com/tushar_kalbhande/">
                 <img src={navIcon3} alt="Icon" />
               </a>
+            </div>
+            <div className="resume">
+              <NavLink href={fileUrl} target="_blank" className="button">
+                <span>Resume / CV</span>
+              </NavLink>
             </div>
 
             <p>

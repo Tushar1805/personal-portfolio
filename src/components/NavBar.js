@@ -6,7 +6,7 @@ import { images } from "../constants";
 import { NavLink } from "react-bootstrap";
 
 const fileUrl =
-  "https://firebasestorage.googleapis.com/v0/b/tusharkalbhande-c84e5.appspot.com/o/Tushar_Kalbhande.pdf?alt=media&token=3f326c88-4f3f-4f54-84df-173730852d4b";
+  "https://firebasestorage.googleapis.com/v0/b/tusharkalbhande-c84e5.appspot.com/o/Tushar_Kalbhande.pdf?alt=media&token=caf4e38c-d69f-44e6-a5fd-89babe374957";
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -51,7 +51,7 @@ export const NavBar = () => {
   };
 
   return (
-    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+    <Navbar expand="lg" className={scrolled ? "scrolled" : "mobile"}>
       <Container>
         <Navbar.Brand href="#home">
           <img src={images.logo} width={220} height={50} alt="Logo" />

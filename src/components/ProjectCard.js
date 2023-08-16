@@ -20,10 +20,10 @@ export const ProjectCard = ({ title, description, imgUrl, view, source }) => {
           <p> {description}</p>
           <div className="pro-btn">
             <NavLink href={view} target="_blank" className="button">
-              Details
+              <span>Details</span>
             </NavLink>
             <NavLink href={source} target="_blank" className="button">
-              Source
+              <span>Source</span>
             </NavLink>
             {/* <button
               onClick={() => {
