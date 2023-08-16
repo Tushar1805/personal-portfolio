@@ -858,6 +858,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .footer .resume .button::before {
   content: "";
   background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   width: 0;
   height: 100%;
   position: absolute;
