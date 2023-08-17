@@ -6,7 +6,7 @@ import { images } from "../constants";
 import { NavLink } from "react-bootstrap";
 
 const fileUrl =
-  "https://firebasestorage.googleapis.com/v0/b/tusharkalbhande-c84e5.appspot.com/o/Tushar_Kalbhande.pdf?alt=media&token=caf4e38c-d69f-44e6-a5fd-89babe374957";
+  "https://firebasestorage.googleapis.com/v0/b/tusharkalbhande-c84e5.appspot.com/o/Tushar_Kalbhande.pdf?alt=media&token=fdff2805-8662-452f-9a9d-71cc6e67c0c6";
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
