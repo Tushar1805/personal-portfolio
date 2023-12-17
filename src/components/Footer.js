@@ -62,7 +62,6 @@ export const Footer = () => {
               <br />
               Tushar
             </p>
-            <p>Copyright 2023. All Rights Reserved</p>
           </Col>
         </Row>
       </Container>

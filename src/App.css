@@ -502,6 +502,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: #1a1919;
   padding: 1.5rem 1.5 rem;
   margin: auto;
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 .project-card img {
@@ -510,9 +515,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .pro-details p {
   height: 200px;
+  justify-content: center;
   padding-bottom: 1rem;
   font-size: 1.1rem;
-  text-align: justify;
 }
 
 .project-card .project-title {
@@ -524,7 +529,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .project-container .pro-btn {
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   padding: 0.5rem 0 0 0;
   color: white;

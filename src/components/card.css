@@ -1,0 +1,37 @@
+.card:hover {
+  box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.273) !important;
+  transition: all 0.7s linear;
+}
+
+.project {
+  padding-left: 15px;
+}
+
+.card-body {
+  padding: 2rem 0 !important;
+  height: 300px;
+}
+
+.card-text {
+  padding: 0.3rem 1rem;
+  text-overflow: ellipsis;
+  height: 200px;
+  font-size: 1rem;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.card-img-top {
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card-img-top:hover {
+  transform: scale(1.8);
+}
